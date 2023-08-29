@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f03dc73e-2413-4360-8169-49f25c2c85c2" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="2UeJDFpbhGENB7Jbu5VRkYQ6HYO" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/luis/IdeaProjects/microservices/balance-service/src/main/java/com/balance/balanceservice"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/balance-service/src/main/java/com/balance/balanceservice" />
+      <recent name="$PROJECT_DIR$/payment-service/src/main/java/com/payment/paymentservice/controller" />
+      <recent name="$PROJECT_DIR$/payment-service/src/main/java/com/payment/paymentservice/service/impl" />
+      <recent name="$PROJECT_DIR$/payment-service/src/main/java/com/payment/paymentservice/service" />
+      <recent name="$PROJECT_DIR$/payment-service/src/main/java/com/payment/paymentservice/security" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.payment.paymentservice.payload" />
+      <recent name="com.balance.balanceservice.payload" />
+      <recent name="com.balance.balanceservice.controller" />
+      <recent name="com.balance.balanceservice.repository" />
+      <recent name="com.balance.balanceservice.service.impl" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.BalanceServiceApplication">
+    <configuration name="BalanceServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.balance.balanceservice.BalanceServiceApplication" />
+      <module name="balance-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.balance.balanceservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PaymentServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.payment.paymentservice.PaymentServiceApplication" />
+      <module name="payment-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.payment.paymentservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.BalanceServiceApplication" />
+        <item itemvalue="Application.PaymentServiceApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f03dc73e-2413-4360-8169-49f25c2c85c2" name="Changes" comment="" />
+      <created>1693293990910</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1693293990910</updated>
+    </task>
+    <servers />
+  </component>
+</project>

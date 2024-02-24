@@ -29,9 +29,7 @@ public class BalanceController {
 
     @PutMapping("/{id}")
     public ResponseEntity<BalanceDto> updateBalance(@RequestBody BalanceDto balanceDto, @PathVariable(name = "id") long id){
-
         BalanceDto updatedBalance = balanceService.updateBalance(balanceDto, id);
-
         return new ResponseEntity<>(updatedBalance, HttpStatus.OK);
     }
 }

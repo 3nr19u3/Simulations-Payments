@@ -8,6 +8,7 @@ import com.payment.paymentservice.payload.PaymentResponse;
 import com.payment.paymentservice.repository.PaymentRepository;
 import com.payment.paymentservice.service.PaymentService;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,6 +20,7 @@ import org.springframework.web.client.RestTemplate;
 
 @Service
 @AllArgsConstructor
+@NoArgsConstructor
 public class PaymentServiceImpl implements PaymentService {
     Logger logger = LoggerFactory.getLogger(PaymentServiceImpl.class);
 

@@ -49,6 +49,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests((authorize) ->
                                 //authorize.anyRequest().authenticated()
                                 authorize.requestMatchers("/api/payment").permitAll()
+                                        .requestMatchers("/api/currency/**").permitAll()
                                         .requestMatchers("/api/auth/**").permitAll()
                                          .anyRequest().authenticated()
                         //).httpBasic(Customizer.withDefaults());

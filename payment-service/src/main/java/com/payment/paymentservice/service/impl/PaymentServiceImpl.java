@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -23,20 +24,20 @@ import org.springframework.web.client.RestTemplate;
 @NoArgsConstructor
 public class PaymentServiceImpl implements PaymentService {
     Logger logger = LoggerFactory.getLogger(PaymentServiceImpl.class);
-
+    @Autowired
     private PaymentRepository paymentRepository;
     //private Currency currencyRepository;
     private ModelMapper modelMapper;
-
+    @Autowired
     private RestTemplate restTemplate;
 
-    public PaymentServiceImpl(PaymentRepository paymentRepository,
+    //public PaymentServiceImpl(PaymentRepository paymentRepository,
                               //CurrencyRepository currencyRepository,
-                              ModelMapper modelMapper) {
-        this.paymentRepository = paymentRepository;
+    //                          ModelMapper modelMapper) {
+    //    this.paymentRepository = paymentRepository;
         //this.currencyRepository = currencyRepository;
-        this.modelMapper = modelMapper;
-    }
+    //    this.modelMapper = modelMapper;
+    //}
 
     @Override
     public PaymentResponse createPayment(PaymentDto paymentDto) {

@@ -23,7 +23,7 @@
 hs_err_pid*
 
 # Balance-Service
-/balance-service/config/*
+/balance-service/config/
 !/balance-service/config/README.md
 !/balance-service/config/*.example
 
@@ -40,7 +40,7 @@ hs_err_pid*
 
 
 # Payment-Service
-/payment-service/config/*
+/payment-service/config/
 !/payment-service/config/README.md
 !/payment-service/config/*.example
 

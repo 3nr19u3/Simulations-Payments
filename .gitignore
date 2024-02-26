@@ -21,3 +21,36 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+# Balance-Service
+/balance-service/config/*
+!/balance-service/config/README.md
+!/balance-service/config/*.example
+
+/balance-service/target/
+!/balance-service/.mvn/wrapper/maven-wrapper.jar
+!/balance-service/**/src/main/**/target/
+!/balance-service/**/src/test/**/target/
+
+### IntelliJ IDEA ###
+/balance-service/.idea
+/balance-service/*.iws
+/balance-service/*.iml
+/balance-service/*.ipr
+
+
+# Payment-Service
+/payment-service/config/*
+!/payment-service/config/README.md
+!/payment-service/config/*.example
+
+/payment-service/target/
+!/payment-service/.mvn/wrapper/maven-wrapper.jar
+!/payment-service/**/src/main/**/target/
+!/payment-service/**/src/test/**/target/
+
+### IntelliJ IDEA ###
+/payment-service/.idea
+/payment-service/*.iws
+/payment-service/*.iml
+/payment-service/*.ipr

@@ -1,0 +1,13 @@
+spring.datasource.url=jdbc:mysql://localhost:3306/<YourDBName>
+spring.datasource.username=<YourUser>
+spring.datasource.password=<YourPass>
+
+spring.jpa.show-sql=true
+#key command to able creation
+spring.jpa.generate-ddl=true
+spring.jpa.hibernate.ddl.auto=update
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
+
+#SHA-256 encryption - luis
+app.jwt-secret=<YourCode>
+app-jwt-expiration-milliseconds=604800000

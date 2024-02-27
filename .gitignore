@@ -28,9 +28,12 @@ hs_err_pid*
 !/balance-service/config/*.example
 
 /balance-service/target/
+/balance-service/.mvn/
+/balance-service/mvnw
+/balance-service/mvnw.bat
+/balance-service/mvnw.cmd
+/balance-service/src/test/
 !/balance-service/.mvn/wrapper/maven-wrapper.jar
-!/balance-service/**/src/main/**/target/
-!/balance-service/**/src/test/**/target/
 
 ### IntelliJ IDEA ###
 /balance-service/.idea
@@ -45,9 +48,12 @@ hs_err_pid*
 !/payment-service/config/*.example
 
 /payment-service/target/
+/payment-service/.mvn/
+/payment-service/mvnw
+/payment-service/mvnw.bat
+/payment-service/mvnw.cmd
+/payment-service/src/test/
 !/payment-service/.mvn/wrapper/maven-wrapper.jar
-!/payment-service/**/src/main/**/target/
-!/payment-service/**/src/test/**/target/
 
 ### IntelliJ IDEA ###
 /payment-service/.idea

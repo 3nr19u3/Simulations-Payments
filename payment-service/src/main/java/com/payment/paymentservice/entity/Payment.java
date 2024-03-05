@@ -27,7 +27,7 @@ public class Payment {
     @Column(name="destiny_currency", nullable = false)
     private String destiny_currency;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private Long balanceId;
 
 }

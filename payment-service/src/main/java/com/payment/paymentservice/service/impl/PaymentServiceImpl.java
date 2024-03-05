@@ -6,6 +6,7 @@ import com.payment.paymentservice.payload.CurrencyDto;
 import com.payment.paymentservice.payload.PaymentDto;
 import com.payment.paymentservice.payload.PaymentResponse;
 import com.payment.paymentservice.repository.PaymentRepository;
+import com.payment.paymentservice.service.APIClient;
 import com.payment.paymentservice.service.PaymentService;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -28,8 +29,10 @@ public class PaymentServiceImpl implements PaymentService {
     private PaymentRepository paymentRepository;
     //private Currency currencyRepository;
     private ModelMapper modelMapper;
+    //@Autowired
+    //private RestTemplate restTemplate;
     @Autowired
-    private RestTemplate restTemplate;
+    private APIClient apiClient;
 
     //public PaymentServiceImpl(PaymentRepository paymentRepository,
                               //CurrencyRepository currencyRepository,
@@ -42,12 +45,17 @@ public class PaymentServiceImpl implements PaymentService {
     @Override
     public PaymentResponse createPayment(PaymentDto paymentDto) {
 
-        ResponseEntity<CurrencyDto> responseEntity = restTemplate.getForEntity("http://localhost:8080/api/currency/"+paymentDto.getCurrency1(), CurrencyDto.class);
-        ResponseEntity<CurrencyDto> responseEntity2 = restTemplate.getForEntity("http://localhost:8080/api/currency/"+paymentDto.getCurrency2(), CurrencyDto.class);
-        CurrencyDto currency = responseEntity.getBody();
-        CurrencyDto currency2 = responseEntity2.getBody();
+        //ResponseEntity<CurrencyDto> responseEntity = restTemplate.getForEntity("http://localhost:8080/api/currency/"+paymentDto.getCurrency1(), CurrencyDto.class);
+        //ResponseEntity<CurrencyDto> responseEntity2 = restTemplate.getForEntity("http://localhost:8080/api/currency/"+paymentDto.getCurrency2(), CurrencyDto.class);
+        //CurrencyDto currency = responseEntity.getBody();
+        //CurrencyDto currency2 = responseEntity2.getBody();
+
+        CurrencyDto currency  = apiClient.getCurrencyByName(paymentDto.getCurrency1());
+        CurrencyDto currency2  = apiClient.getCurrencyByName(paymentDto.getCurrency2());
+
         //Currency currencyI = currencyRepository.findByName(paymentDto.getCurrency1());
         //Currency currencyF =currencyRepository.findByName(paymentDto.getCurrency2());
+
         //Recovery data form MS-1
         Payment payment = mapToEntity(paymentDto);
         Payment newPayment = paymentRepository.save(payment);
@@ -56,10 +64,10 @@ public class PaymentServiceImpl implements PaymentService {
         assert currency != null;
         assert currency2 != null;
         return new PaymentResponse(newPayment.getAmount(),
-                                    newPayment.getAmount()*currency.getValue(),
-                                    newPayment.getOrigin_currency(),
-                                    newPayment.getDestiny_currency(),
-                                    currency2.getValue());
+                                   newPayment.getAmount()*currency.getValue(),
+                                   newPayment.getOrigin_currency(),
+                                   newPayment.getDestiny_currency(),
+                                   currency2.getValue());
     }
 
     private Payment mapToEntity(PaymentDto paymentDto){

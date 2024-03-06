@@ -59,7 +59,7 @@ hs_err_pid*
 
 # Registry-Service
 /service-registry/src/main/resources/
-/service-registry/config/
+#/service-registry/config/
 !/service-registry/config/README.md
 !/service-registry/config/*.example
 

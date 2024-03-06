@@ -11,3 +11,7 @@ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
 #SHA-256 encryption - luis
 app.jwt-secret=<YourCode>
 app-jwt-expiration-milliseconds=604800000
+
+#EUREKA CONFIGURATIONS TO WORKS AS CLIENT
+spring.application.name=<ID-SERVICE-NAME (TO EUREKA)>
+eureka.instance.client.serverUrl.defaultZone=(EUREKA SERVICE URL)

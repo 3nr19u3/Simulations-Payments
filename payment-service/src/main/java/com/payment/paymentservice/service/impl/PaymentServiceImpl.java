@@ -34,24 +34,17 @@ public class PaymentServiceImpl implements PaymentService {
     @Autowired
     private APIClient apiClient;
 
-    //public PaymentServiceImpl(PaymentRepository paymentRepository,
-                              //CurrencyRepository currencyRepository,
-    //                          ModelMapper modelMapper) {
-    //    this.paymentRepository = paymentRepository;
-        //this.currencyRepository = currencyRepository;
-    //    this.modelMapper = modelMapper;
-    //}
-
     @Override
     public PaymentResponse createPayment(PaymentDto paymentDto) {
 
         //ResponseEntity<CurrencyDto> responseEntity = restTemplate.getForEntity("http://localhost:8080/api/currency/"+paymentDto.getCurrency1(), CurrencyDto.class);
         //ResponseEntity<CurrencyDto> responseEntity2 = restTemplate.getForEntity("http://localhost:8080/api/currency/"+paymentDto.getCurrency2(), CurrencyDto.class);
-        //CurrencyDto currency = responseEntity.getBody();
-        //CurrencyDto currency2 = responseEntity2.getBody();
+        //CurrencyDto currencyI = responseEntity.getBody();
+        //CurrencyDto currencyF = responseEntity2.getBody();
 
-        CurrencyDto currency  = apiClient.getCurrencyByName(paymentDto.getCurrency1());
-        CurrencyDto currency2  = apiClient.getCurrencyByName(paymentDto.getCurrency2());
+        //Replace the use of restTemplate by openFeign library of Spring cloud
+        CurrencyDto currencyI  = apiClient.getCurrencyByName(paymentDto.getCurrency1());
+        CurrencyDto currencyF  = apiClient.getCurrencyByName(paymentDto.getCurrency2());
 
         //Currency currencyI = currencyRepository.findByName(paymentDto.getCurrency1());
         //Currency currencyF =currencyRepository.findByName(paymentDto.getCurrency2());
@@ -61,13 +54,13 @@ public class PaymentServiceImpl implements PaymentService {
         Payment newPayment = paymentRepository.save(payment);
 
         //return new PaymentResponse();
-        assert currency != null;
-        assert currency2 != null;
+        assert currencyI != null;
+        assert currencyF != null;
         return new PaymentResponse(newPayment.getAmount(),
-                                   newPayment.getAmount()*currency.getValue(),
+                                   newPayment.getAmount()*currencyI.getValue(),
                                    newPayment.getOrigin_currency(),
                                    newPayment.getDestiny_currency(),
-                                   currency2.getValue());
+                                   currencyF.getValue());
     }
 
     private Payment mapToEntity(PaymentDto paymentDto){

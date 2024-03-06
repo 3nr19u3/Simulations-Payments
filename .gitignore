@@ -57,6 +57,20 @@ hs_err_pid*
 /payment-service/src/test/
 !/payment-service/.mvn/wrapper/maven-wrapper.jar
 
+# Registry-Service
+/service-registry/src/main/resources/
+/service-registry/config/
+!/service-registry/config/README.md
+!/service-registry/config/*.example
+
+/service-registry/target/
+/service-registry/.mvn/
+/service-registry/mvnw
+/service-registry/mvnw.bat
+/service-registry/mvnw.cmd
+/service-registry/src/test/
+!/service-registry/.mvn/wrapper/maven-wrapper.jar
+
 ### IntelliJ IDEA ###
 /payment-service/.idea
 /payment-service/*.iws

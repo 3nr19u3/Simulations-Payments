@@ -1,0 +1,25 @@
+profiles:
+  active: git
+
+spring:
+  application:
+    name: <SERVICE-NAME>
+  cloud:
+    config:
+      server:
+        git:
+          uri: <https://github.com/${GIT_USER}/${GIT_REPO}.git>
+          username: ${GIT_USER}
+          password: <youraccesstoken>
+          clone-on-start: true
+          default-label: ${GIT_BRANCH}
+          #tryMasterBranch: false
+
+eureka:
+  instance:
+    client:
+      serverUrl:
+        defaultZone: http://localhost:8761/eureka/
+
+server:
+  port: 8888

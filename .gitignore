@@ -85,6 +85,20 @@ hs_err_pid*
 /api-gateway/src/test/
 !/api-gateway/.mvn/wrapper/maven-wrapper.jar
 
+# Config-Server
+/config-server/src/main/resources/*
+#/config-server/config/
+!/config-server/config/README.md
+!/config-server/config/*.example
+
+/config-server/target/
+/config-server/.mvn/
+/config-server/mvnw
+/config-server/mvnw.bat
+/config-server/mvnw.cmd
+/config-server/src/test/
+!/config-server/.mvn/wrapper/maven-wrapper.jar
+
 ### IntelliJ IDEA ###
 /payment-service/.idea
 /payment-service/*.iws

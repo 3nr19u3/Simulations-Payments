@@ -51,7 +51,8 @@ public class SecurityConfig {
                                 authorize.requestMatchers("/api/payment").permitAll()
                                         .requestMatchers("/api/currency/**").permitAll()
                                         .requestMatchers("/api/auth/**").permitAll()
-                                         .anyRequest().authenticated()
+                                        .requestMatchers("/actuator/**").permitAll()
+                                        .anyRequest().authenticated()
                         //).httpBasic(Customizer.withDefaults());
                 ).exceptionHandling( exception -> exception
                         .authenticationEntryPoint(authenticationEntryPoint)

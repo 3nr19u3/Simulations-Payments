@@ -27,7 +27,10 @@ this balance-service will saved an register for each user in this register of ba
 While the payment-service register an simulated payment making the substraction to balance-service, also validating the value between currencies<br>
 <br>
 <br>
-### *How test this project?*(all endpoints will be available from a service in the next days, after deployment of this application)
+### *How test this project?*
+<br>
+(all endpoints will be available from a service in the next days, after deployment of this application)
+<br>
 1.- You should register as user in http://localhost:9191/api/auth/signup<br>
 2.- After that you be an user registered you access into app using the endpoint http://localhost:9191/api/auth/signin<br>
 3.- As a next step you should be create a balance account (with a value in an currency type valid) using http://localhost:9191/api/balance<br>

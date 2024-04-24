@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -21,13 +22,13 @@ public class Payment {
     @Column(name="amount", nullable = false)
     private double amount;
 
-    @Column(name="origin_currency", nullable = false)
-    private String origin_currency;
+    @Column(name = "origin_currency_id", nullable = false)
+    private int origin_currency;
 
-    @Column(name="destiny_currency", nullable = false)
-    private String destiny_currency;
+    @Column(name = "destiny_currency_id", nullable = false)
+    private int destiny_currency;
 
     @Column(nullable = false)
-    private Long balanceId;
+    private int balanceId;
 
 }

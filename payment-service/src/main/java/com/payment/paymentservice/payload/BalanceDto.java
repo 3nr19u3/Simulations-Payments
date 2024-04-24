@@ -1,6 +1,5 @@
-package com.balance.balanceservice.payload;
+package com.payment.paymentservice.payload;
 
-import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,6 +8,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BalanceDto {
+    private int id;
     private String currency;
     private double amount;
+    private Object user;
 }

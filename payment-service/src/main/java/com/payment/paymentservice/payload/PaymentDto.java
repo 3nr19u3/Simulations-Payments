@@ -9,8 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class PaymentDto {
     private double amount;
-    private String currency1;
-    private String currency2;
+    private String originCurrency;
+    private String destinyCurrency;
     private int balanceId;
-
 }

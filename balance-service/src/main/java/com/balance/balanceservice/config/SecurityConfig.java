@@ -52,6 +52,7 @@ public class SecurityConfig {
                                         .requestMatchers("/api/currency/**").permitAll()
                                         .requestMatchers("/api/auth/**").permitAll()
                                         .requestMatchers("/actuator/**").permitAll()
+                                        .requestMatchers("/api/balance/**").permitAll()
                                         .anyRequest().authenticated()
                         //).httpBasic(Customizer.withDefaults());
                 ).exceptionHandling( exception -> exception

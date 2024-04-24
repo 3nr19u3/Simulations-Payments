@@ -6,6 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/currency")
 public class CurrencyController {
@@ -15,12 +17,21 @@ public class CurrencyController {
     public CurrencyController(CurrencyService currencyService) {
         this.currencyService = currencyService;
     }
+    //TODO : refactor this method
+    //@GetMapping
+    //public ResponseEntity<List<CurrencyDto>> getAllCurrencies() {
+    //    return ResponseEntity.ok(currencyService.getAllCurrencies());
+    //}
 
-    @GetMapping("/{name}")
-    public ResponseEntity<CurrencyDto> getCurrencyByName(@PathVariable(name = "name") String name){
-        return ResponseEntity.ok(currencyService.getCurrency(name));
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public ResponseEntity<CurrencyDto> getCurrencyById(@PathVariable(name = "id") long id) throws Exception {
+        return ResponseEntity.ok(currencyService.getCurrencyById(id));
     }
 
+    @RequestMapping(method = RequestMethod.GET)
+    public ResponseEntity<CurrencyDto> getCurrencyByName(@RequestParam(value = "name") String name) throws Exception {
+        return ResponseEntity.ok(currencyService.getCurrencyByName(name));
+    }
 
     @PostMapping
     public ResponseEntity<CurrencyDto> createCurrency(@RequestBody CurrencyDto currencyDto){

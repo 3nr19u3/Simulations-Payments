@@ -28,10 +28,10 @@ While the payment-service register an simulated payment making the substraction 
 <br>
 <br>
 ### *How test this project?*(all endpoints will be available from a service in the next days, after deployment of this application)
-1.- You should register as user in http://localhost:9191/api/auth/signup
-2.- After that you be an user registered you access into app using the endpoint http://localhost:9191/api/auth/signin
-3.- As a next step you should be create a balance account (with a value in an currency type valid) using http://localhost:9191/api/balance
-4.- The final test for the process can be make the payment using http://localhost:9191/api/payment 
+1.- You should register as user in http://localhost:9191/api/auth/signup<br>
+2.- After that you be an user registered you access into app using the endpoint http://localhost:9191/api/auth/signin<br>
+3.- As a next step you should be create a balance account (with a value in an currency type valid) using http://localhost:9191/api/balance<br>
+4.- The final test for the process can be make the payment using http://localhost:9191/api/payment<br>
 (remember that you should have an balance account registred with balance higher value that payment, otherwise this operation will result in an error.)
 
 

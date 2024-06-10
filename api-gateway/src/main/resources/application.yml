@@ -1,3 +1,5 @@
+app:
+    jwt-secret: "{jwt-secret}"
 eureka:
     instance:
         client:
@@ -20,8 +22,20 @@ spring:
             routes:
             -   id: BALANCE-SERVICE
                 predicates:
-                - Path=/api/auth/**, /api/currency/**, /api/balance/**
+                - Path=/api/currency/**, /api/balance/**
                 uri: lb://BALANCE-SERVICE
+                filters:
+                  - AuthenticationFilter
+
             -   id: PAYMENT-SERVICE
-                predicates: Path=/api/payment/**
+                predicates:
+                - Path=/api/payment/**
                 uri: lb://PAYMENT-SERVICE
+                filters:
+                  - AuthenticationFilter
+
+
+            -   id: AUTH-SERVICE
+                predicates:
+                - Path=/api/auth/**
+                uri: lb://AUTH-SERVICE

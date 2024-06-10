@@ -1,15 +1,13 @@
 package com.balance.balanceservice.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 @Entity
 @Table(name="balances")
 public class Balance {
@@ -21,7 +19,7 @@ public class Balance {
     @Column(nullable = false)
     private String currency;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private double amount;
 
     @Column(nullable = false, unique = true)

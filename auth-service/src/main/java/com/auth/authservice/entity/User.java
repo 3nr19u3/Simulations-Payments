@@ -1,4 +1,4 @@
-package com.balance.balanceservice.entity;
+package com.auth.authservice.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

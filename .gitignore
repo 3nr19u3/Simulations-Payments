@@ -72,7 +72,7 @@ hs_err_pid*
 !/service-registry/.mvn/wrapper/maven-wrapper.jar
 
 # Api-Gateway
-#/api-gateway/src/main/resources/
+/api-gateway/src/main/resources/
 #/api-gateway/config/
 #!/api-gateway/config/README.md
 #!/api-gateway/config/*.example
@@ -98,6 +98,21 @@ hs_err_pid*
 /config-server/mvnw.cmd
 /config-server/src/test/
 !/config-server/.mvn/wrapper/maven-wrapper.jar
+
+
+# Auth-Service
+/auth-service/src/main/resources/
+/auth-service/config/
+!/auth-service/config/README.md
+!/auth-service/config/*.example
+
+/auth-service/target/
+/auth-service/.mvn/
+/auth-service/mvnw
+/auth-service/mvnw.bat
+/auth-service/mvnw.cmd
+/auth-service/src/test/
+!/auth-service/.mvn/wrapper/maven-wrapper.jar
 
 ### IntelliJ IDEA ###
 /payment-service/.idea

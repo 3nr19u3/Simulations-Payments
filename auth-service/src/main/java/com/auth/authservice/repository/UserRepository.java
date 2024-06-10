@@ -1,6 +1,6 @@
-package com.balance.balanceservice.repository;
+package com.auth.authservice.repository;
 
-import com.balance.balanceservice.entity.User;
+import com.auth.authservice.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

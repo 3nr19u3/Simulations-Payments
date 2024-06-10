@@ -1,4 +1,4 @@
-package com.balance.balanceservice.payload;
+package com.auth.authservice.payload;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,9 +9,7 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class RegisterDto {
-    private String name;
-    private String username;
-    private String email;
+public class LoginDto {
+    private String usernameOrEmail;
     private String password;
 }

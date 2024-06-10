@@ -1,4 +1,4 @@
-package com.balance.balanceservice.security;
+package com.auth.authservice.security;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

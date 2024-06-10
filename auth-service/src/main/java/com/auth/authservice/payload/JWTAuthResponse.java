@@ -1,4 +1,4 @@
-package com.balance.balanceservice.payload;
+package com.auth.authservice.payload;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

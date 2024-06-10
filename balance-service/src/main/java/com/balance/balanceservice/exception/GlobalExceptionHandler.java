@@ -34,7 +34,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(APIException.class)
     public ResponseEntity<ErrorDetails> handleAPIException(APIException exception,
-                                                                WebRequest webRequest){
+                                                           WebRequest webRequest){
         ErrorDetails errorDetails = new ErrorDetails(new Date(),
                                                      exception.getMessage(),
                                                      webRequest.getDescription(false));
@@ -89,7 +89,5 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
         return new ResponseEntity<>(errorDetails, HttpStatus.UNAUTHORIZED);
     }
-
-
 
 }

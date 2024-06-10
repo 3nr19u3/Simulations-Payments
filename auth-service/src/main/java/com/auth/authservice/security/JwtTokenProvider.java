@@ -1,6 +1,6 @@
-package com.balance.balanceservice.security;
+package com.auth.authservice.security;
 
-import com.balance.balanceservice.exception.APIException;
+import com.auth.authservice.exception.APIException;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
@@ -51,9 +51,9 @@ public class JwtTokenProvider {
     public boolean validateToken(String token){
         try{
             Jwts.parserBuilder()
-                    .setSigningKey(key())
-                    .build()
-                    .parse(token);
+                .setSigningKey(key())
+                .build()
+                .parse(token);
 
             return true;
 

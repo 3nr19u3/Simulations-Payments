@@ -1,14 +1,14 @@
-package com.balance.balanceservice.service.impl;
+package com.auth.authservice.service.impl;
 
 
 
-import com.balance.balanceservice.entity.User;
-import com.balance.balanceservice.exception.APIException;
-import com.balance.balanceservice.payload.LoginDto;
-import com.balance.balanceservice.payload.RegisterDto;
-import com.balance.balanceservice.repository.UserRepository;
-import com.balance.balanceservice.security.JwtTokenProvider;
-import com.balance.balanceservice.service.AuthService;
+import com.auth.authservice.exception.APIException;
+import com.auth.authservice.security.JwtTokenProvider;
+import com.auth.authservice.entity.User;
+import com.auth.authservice.payload.LoginDto;
+import com.auth.authservice.payload.RegisterDto;
+import com.auth.authservice.repository.UserRepository;
+import com.auth.authservice.service.AuthService;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

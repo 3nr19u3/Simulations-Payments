@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CurrencyDto {
-    private long id;
+    private int id;
     private String name;
     private double value;
     private boolean isLocal;

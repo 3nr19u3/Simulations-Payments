@@ -8,9 +8,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PaymentResponse {
-    private double amount;
-    private double newAmount;
-    private String oCurrency;
-    private String dCurrency;
-    private double currencyValue;
+    private double amount;//amount of payment
+    private double newAmount;//amount of balance after payment
+    private String oCurrency;//currency of payment
+    private String dCurrency;//currency of balance
+    private double currencyValue;//value of currency
 }

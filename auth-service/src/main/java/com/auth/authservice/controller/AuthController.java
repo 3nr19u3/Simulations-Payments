@@ -1,9 +1,9 @@
-package com.balance.balanceservice.controller;
+package com.auth.authservice.controller;
 
-import com.balance.balanceservice.payload.JWTAuthResponse;
-import com.balance.balanceservice.payload.LoginDto;
-import com.balance.balanceservice.payload.RegisterDto;
-import com.balance.balanceservice.service.AuthService;
+import com.auth.authservice.payload.JWTAuthResponse;
+import com.auth.authservice.payload.RegisterDto;
+import com.auth.authservice.payload.LoginDto;
+import com.auth.authservice.service.AuthService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

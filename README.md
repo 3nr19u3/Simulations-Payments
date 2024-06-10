@@ -39,3 +39,12 @@ While the payment-service register an simulated payment making the substraction 
 
 
 ![image](https://github.com/3nr19u3/java-microservices/assets/46394434/cd0d15a3-4869-4414-9071-9747bba7f11a)
+
+<br>
+
+### *Some Improved (Authenticacion logic separation into independient service)*
+
+<br>
+
+![Untitled-2024-03-23-2008](https://github.com/3nr19u3/java-microservices/assets/46394434/99974881-f9c0-46c4-b393-87df8f64ab35)
+

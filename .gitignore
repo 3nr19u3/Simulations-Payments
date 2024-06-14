@@ -72,7 +72,7 @@ hs_err_pid*
 !/service-registry/.mvn/wrapper/maven-wrapper.jar
 
 # Api-Gateway
-/api-gateway/src/main/resources/
+/api-gateway/src/main/resources/*
 #/api-gateway/config/
 #!/api-gateway/config/README.md
 #!/api-gateway/config/*.example

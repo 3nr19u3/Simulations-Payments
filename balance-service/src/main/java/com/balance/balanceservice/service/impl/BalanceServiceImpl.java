@@ -25,7 +25,7 @@ import java.util.Optional;
 @Service
 public class BalanceServiceImpl implements BalanceService {
 
-    private static final Logger logger = LoggerFactory.getLogger(BalanceServiceImpl.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(BalanceServiceImpl.class);
     private final BalanceServiceApplication balanceServiceApplication;
 
     private RestTemplate restTemplate;
@@ -57,11 +57,12 @@ public class BalanceServiceImpl implements BalanceService {
     public BalanceResponseDto createBalance(BalanceRequestDto balanceRequestDto) throws Exception {
         //Get the user credentials
         UserDetails userDetails  = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        logger.info("userDetails {}",userDetails.toString());
+        LOGGER.info("userDetails {}",userDetails.toString());
+        String email = userDetails.getUsername();
 
-        UserDto userDto = getUserDto(userDetails.getUsername());
+        UserDto userDto = getUserDto(email);
         Long userId = userDto.getId();
-        logger.info("userId {}",userId);
+        LOGGER.info("userId {}",userId);
         Balance balance = new Balance();
         //Validate if the user have or not an balance account created
         Optional<Balance> balanceOpt = balanceRepository.findByUserId(userId);
@@ -69,7 +70,7 @@ public class BalanceServiceImpl implements BalanceService {
         balanceOpt.ifPresentOrElse(
                     (value)
                         -> {
-                        logger.info("value {}",value.toString());
+                        LOGGER.info("value {}",value.toString());
                         //if the user already have create an account
                         throw new APIException(HttpStatus.BAD_REQUEST, "This user already have a balance account created");
                     },
@@ -80,13 +81,14 @@ public class BalanceServiceImpl implements BalanceService {
                         balance.setAmount(balanceRequestDto.getAmount());
                         balance.setUserId(userId);
                     }
-            );
+        );
 
-        logger.info("balance: {}",balance);
+        LOGGER.info("balance: {}",balance);
         //create the balance linked to userId
         balanceRepository.save(balance);
         //return the ResponseDto Object
-        return new BalanceResponseDto(balance.getCurrency(),
+        return new BalanceResponseDto(balance.getId(),
+                                      balance.getCurrency(),
                                       balance.getAmount(),
                                       userId);
     }
@@ -125,7 +127,19 @@ public class BalanceServiceImpl implements BalanceService {
         Balance balance = balanceRepository.findById(id)
                                             .orElseThrow(()-> new Exception("BalanceId not found!"));
 
-        return new BalanceResponseDto(balance.getCurrency(),
+        return new BalanceResponseDto(balance.getId(),
+                                      balance.getCurrency(),
+                                      balance.getAmount(),
+                                      balance.getUserId());
+    }
+
+    @Override
+    public BalanceResponseDto getBalanceByUserId(long userId) throws Exception {
+        Balance balance = balanceRepository.findByUserId(userId)
+                                           .orElseThrow(()-> new Exception("BalanceId not found!"));
+
+        return new BalanceResponseDto(balance.getId(),
+                                      balance.getCurrency(),
                                       balance.getAmount(),
                                       balance.getUserId());
     }
@@ -149,6 +163,5 @@ public class BalanceServiceImpl implements BalanceService {
     private BalanceDto mapToDTO(Balance balance){
         return modelMapper.map(balance, BalanceDto.class);
     }
-
 
 }

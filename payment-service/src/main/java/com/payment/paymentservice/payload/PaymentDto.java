@@ -1,15 +1,6 @@
 package com.payment.paymentservice.payload;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+public record PaymentDto (double amount,
+                          String currencyName){
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class PaymentDto {
-    private double amount;
-    private String originCurrency;
-    private String destinyCurrency;
-    private int balanceId;
 }

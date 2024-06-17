@@ -28,12 +28,6 @@ public class CurrencyController {
         return ResponseEntity.ok(currencyService.getAllCurrencies());
     }
 
-    @PostMapping
-    public ResponseEntity<CurrencyDto> createCurrency(@Validated @RequestBody CurrencyDto currencyDto){
-        LOGGER.info("INTO createCurrency()");
-        return new ResponseEntity<>(currencyService.createCurrency(currencyDto), HttpStatus.CREATED);
-    }
-
     @GetMapping(value = "/{id}")
     public ResponseEntity<CurrencyDto> getCurrencyById(@PathVariable(name = "id") long id) throws Exception {
         LOGGER.info("INTO getCurrencyById()");
@@ -44,5 +38,11 @@ public class CurrencyController {
     public ResponseEntity<CurrencyDto> getCurrencyByName(@RequestParam(value = "name") String name) throws Exception {
         LOGGER.info("INTO getCurrencyByName()");
         return ResponseEntity.ok(currencyService.getCurrencyByName(name));
+    }
+
+    @PostMapping
+    public ResponseEntity<CurrencyDto> createCurrency(@Validated @RequestBody CurrencyDto currencyDto){
+        LOGGER.info("INTO createCurrency()");
+        return new ResponseEntity<>(currencyService.createCurrency(currencyDto), HttpStatus.CREATED);
     }
 }
